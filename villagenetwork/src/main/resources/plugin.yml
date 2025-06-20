@@ -1,0 +1,13 @@
+name: Osef
+version: 1.0
+main: com.p3t0plugin.villagenetwork.VillageLife
+api-version: 1.20
+
+
+commands:
+  village:
+    description: Gère ton village
+    usage: /village <create|invite|home|info>
+  post:
+    description: Envoyer un message à l'API
+    usage: /post <message>

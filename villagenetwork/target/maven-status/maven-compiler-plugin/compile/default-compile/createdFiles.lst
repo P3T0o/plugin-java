@@ -1,0 +1,5 @@
+com/p3t0plugin/villagenetwork/data/VillageManager.class
+com/p3t0plugin/villagenetwork/VillageLife.class
+com/p3t0plugin/villagenetwork/models/Village.class
+com/p3t0plugin/villagenetwork/commands/PostMessageCommand.class
+com/p3t0plugin/villagenetwork/commands/VillageCommand.class
