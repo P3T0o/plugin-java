@@ -29,6 +29,12 @@ public class VillageManager extends JavaPlugin {
         saveVillage(village);
     }
 
+    public void reload() {
+        this.config = YamlConfiguration.loadConfiguration(file);
+        loadVillages();
+    }
+
+
     public Village getVillage(UUID ownerId) {
         return villages.get(ownerId);
     }

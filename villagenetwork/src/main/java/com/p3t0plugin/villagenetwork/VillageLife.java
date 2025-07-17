@@ -18,6 +18,9 @@ public class VillageLife extends JavaPlugin {
         saveDefaultConfig();
         villageManager = new VillageManager();
         getLogger().info("VillageNetwork activé !");
+        getCommand("village").setExecutor(new ReloadCommand(villageManager));
+
+        getLogger().info("VillageNetwork activé !");
     }
 
     public VillageManager getVillageManager() {
