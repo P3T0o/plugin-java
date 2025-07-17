@@ -58,5 +58,10 @@ public class VillageManager extends JavaPlugin {
             Location loc = new Location(Bukkit.getWorld(world), x, y, z);
             villages.put(ownerId, new Village(ownerId, name, loc));
         }
+        if (config.getConfigurationSection("villages") == null) return;
+
+        for (String villageName : config.getConfigurationSection("villages").getKeys(false)) {
+            plugin.getLogger().info("Village chargé : " + villageName);
+        }
     }
 }
