@@ -80,6 +80,17 @@ public class VillageManager extends JavaPlugin {
         loadVillages();
     }
 
+    public void saveVillage(String name) {
+        config.set("villages." + name + ".mayor", "Aucun");
+        config.set("villages." + name + ".population", 0);
+        try {
+            config.save(file);
+            plugin.getLogger().info("Village " + name + " sauvegardé.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void loadVillages() {
         for (String key : config.getKeys(false)) {
             UUID ownerId = UUID.fromString(key);
