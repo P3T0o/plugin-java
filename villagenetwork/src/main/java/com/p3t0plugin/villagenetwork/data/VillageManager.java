@@ -53,6 +53,33 @@ public class VillageManager extends JavaPlugin {
         }
     }
 
+    private File villagesFolder;
+
+    public VillageManager(JavaPlugin plugin) {
+        this.plugin = plugin;
+
+        if (!plugin.getDataFolder().exists()) {
+            plugin.getDataFolder().mkdirs();
+        }
+
+        villagesFolder = new File(plugin.getDataFolder(), "villages");
+        if (!villagesFolder.exists()) {
+            villagesFolder.mkdirs();
+        }
+
+        file = new File(plugin.getDataFolder(), "villages.yml");
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        config = YamlConfiguration.loadConfiguration(file);
+        loadVillages();
+    }
+
     private void loadVillages() {
         for (String key : config.getKeys(false)) {
             UUID ownerId = UUID.fromString(key);
